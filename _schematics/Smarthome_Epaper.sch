@@ -1,0 +1,1003 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 4
+Title "ePaper-Controller für OpenHAB REST"
+Date "2021-06-10"
+Rev "0.92"
+Comp "Ahrens & Tauschek"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 5550 1850 1150 3550
+U 5FC63326
+F0 "EPaper-PowerManagement" 50
+F1 "file5FC63325.sch" 50
+F2 "SCL" B L 5550 3700 50 
+F3 "SDA" B L 5550 3800 50 
+F4 "BQ_GPO" O R 6700 2600 50 
+F5 "BQ_1V8" U R 6700 2825 50 
+F6 "BQ_BIN" I R 6700 3050 50 
+F7 "NBQ_EN" I R 6700 3275 50 
+$EndSheet
+$Sheet
+S 9100 1850 1200 3550
+U 5FC6339D
+F0 "EPaper-Connectivity" 50
+F1 "file5FC6339C.sch" 50
+F2 "R_IO18" B L 9100 2900 50 
+F3 "R_IO19" B L 9100 3000 50 
+F4 "R_IO21" B L 9100 3150 50 
+F5 "R_IO22" B L 9100 3250 50 
+F6 "R_IO23" B L 9100 3400 50 
+F7 "R_IO26" B L 9100 3650 50 
+F8 "R_IO27" B L 9100 3750 50 
+F9 "R_IO32" B L 9100 3900 50 
+F10 "R_IO35" I L 9100 4900 50 
+F11 "R_IO2" B L 9100 4350 50 
+F12 "R_IO4" B L 9100 4450 50 
+F13 "R_IO5" B L 9100 4550 50 
+F14 "R_IO25" B L 9100 3500 50 
+F15 "R_IO33" B L 9100 4000 50 
+F16 "R_IO34" I L 9100 4800 50 
+F17 "R_EN" U L 9100 2000 50 
+F18 "R_IO0" I L 9100 2100 50 
+F19 "R_RXD0" I L 9100 2300 50 
+F20 "R_TXD0" O L 9100 2400 50 
+F21 "R_IO6" B R 10300 2600 50 
+F22 "R_IO8" B R 10300 2800 50 
+F23 "R_IO9" B R 10300 2900 50 
+F24 "R_IO10" B R 10300 3000 50 
+F25 "R_IO11" B R 10300 3100 50 
+F26 "R_IO36" I L 9100 5000 50 
+F27 "R_IO39" I L 9100 5100 50 
+F28 "R_IO7" B R 10300 2700 50 
+$EndSheet
+$Comp
+L Device:R R6
+U 1 1 5FD477A8
+P 3350 1450
+F 0 "R6" V 3250 1250 50  0000 C CNN
+F 1 "0R" V 3250 1550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 1450 50  0001 C CNN
+F 3 "~" H 3350 1450 50  0001 C CNN
+	1    3350 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 5FD4783E
+P 3350 1675
+F 0 "R7" V 3250 1475 50  0000 C CNN
+F 1 "0R(NC)" V 3250 1775 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 1675 50  0001 C CNN
+F 3 "~" H 3350 1675 50  0001 C CNN
+	1    3350 1675
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2350 2100 2800 2100
+Wire Wire Line
+	2800 1450 3200 1450
+Wire Wire Line
+	3200 1675 2800 1675
+Connection ~ 2800 1675
+Wire Wire Line
+	2800 1675 2800 1450
+Wire Wire Line
+	2350 2200 2900 2200
+Wire Wire Line
+	2900 1900 3200 1900
+Wire Wire Line
+	2350 2500 2800 2500
+Wire Wire Line
+	2800 2500 2800 2625
+Wire Wire Line
+	2800 2625 3200 2625
+Wire Wire Line
+	2350 2600 2700 2600
+Wire Wire Line
+	2700 2600 2700 2850
+Wire Wire Line
+	2700 2850 3200 2850
+Wire Wire Line
+	2350 2300 3000 2300
+Wire Wire Line
+	3200 2125 3000 2125
+Wire Wire Line
+	3000 2125 3000 2300
+Wire Wire Line
+	2800 2100 2800 1675
+Wire Wire Line
+	3500 1675 3900 1675
+Wire Wire Line
+	3500 1900 3900 1900
+Wire Wire Line
+	3500 2125 3900 2125
+Wire Wire Line
+	3500 2400 3900 2400
+Wire Wire Line
+	3500 2625 3900 2625
+Wire Wire Line
+	3500 2850 3900 2850
+Text Label 3650 1450 0    50   ~ 0
+R_IO23
+Text Label 3650 1900 0    50   ~ 0
+R_IO18
+Text Label 3650 2625 0    50   ~ 0
+R_IO2
+Text Label 3650 2125 0    50   ~ 0
+R_IO21
+Text Label 3650 2400 0    50   ~ 0
+R_IO26
+Wire Wire Line
+	8700 3000 9100 3000
+Wire Wire Line
+	8700 3900 9100 3900
+Wire Wire Line
+	8700 3250 9100 3250
+Wire Wire Line
+	8700 3750 9100 3750
+Wire Wire Line
+	8700 3150 9100 3150
+Wire Wire Line
+	8700 3650 9100 3650
+Wire Wire Line
+	8700 2900 9100 2900
+Text Label 8700 3400 0    50   ~ 0
+R_IO23
+Text Label 8700 3000 0    50   ~ 0
+R_IO19
+Text Label 8700 3900 0    50   ~ 0
+R_IO32
+Text Label 8700 3250 0    50   ~ 0
+R_IO22
+Text Label 8700 3750 0    50   ~ 0
+R_IO27
+Text Label 8700 3150 0    50   ~ 0
+R_IO21
+Text Label 8700 3650 0    50   ~ 0
+R_IO26
+Text Label 8700 2900 0    50   ~ 0
+R_IO18
+Text Label 8700 4900 0    50   ~ 0
+R_IO35
+$Comp
+L Device:R R2
+U 1 1 5FD8A34C
+P 1250 6850
+F 0 "R2" V 1150 6650 50  0000 C CNN
+F 1 "1k8" V 1150 6950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 1180 6850 50  0001 C CNN
+F 3 "~" H 1250 6850 50  0001 C CNN
+	1    1250 6850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1750 6850 1400 6850
+Wire Wire Line
+	1100 6850 850  6850
+$Comp
+L VDD33:VDD33 #PWR0101
+U 1 1 5FD94270
+P 850 6150
+F 0 "#PWR0101" H 850 6000 50  0001 C CNN
+F 1 "VDD33" H 865 6323 50  0000 C CNN
+F 2 "" H 850 6150 50  0001 C CNN
+F 3 "" H 850 6150 50  0001 C CNN
+	1    850  6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 6850 2550 6850
+Text Label 2300 6850 0    50   ~ 0
+R_IO4
+Wire Wire Line
+	9100 4350 8700 4350
+Wire Wire Line
+	9100 4450 8700 4450
+Wire Wire Line
+	9100 4550 8700 4550
+Text Label 8700 4350 0    50   ~ 0
+R_IO2
+Text Label 8700 4450 0    50   ~ 0
+R_IO4
+Text Label 8700 4550 0    50   ~ 0
+R_IO5
+Text Label 4400 3950 0    50   ~ 0
+R_IO25
+Wire Wire Line
+	8700 3500 9100 3500
+Text Label 8700 3500 0    50   ~ 0
+R_IO25
+Text Notes 2250 700  0    50   ~ 0
+General Purpose SPI can be routed to any GPIO pins
+$Comp
+L Device:R R8
+U 1 1 5FD44C4C
+P 3350 1900
+F 0 "R8" V 3250 1700 50  0000 C CNN
+F 1 "0R" V 3250 2000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 1900 50  0001 C CNN
+F 3 "~" H 3350 1900 50  0001 C CNN
+	1    3350 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 5FD469C3
+P 3350 2125
+F 0 "R10" V 3250 1925 50  0000 C CNN
+F 1 "0R" V 3250 2225 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 2125 50  0001 C CNN
+F 3 "~" H 3350 2125 50  0001 C CNN
+	1    3350 2125
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R12
+U 1 1 5FD484D0
+P 3350 2400
+F 0 "R12" V 3250 2200 50  0000 C CNN
+F 1 "0R" V 3250 2500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 2400 50  0001 C CNN
+F 3 "~" H 3350 2400 50  0001 C CNN
+	1    3350 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 5FD4A025
+P 3350 2625
+F 0 "R14" V 3250 2425 50  0000 C CNN
+F 1 "0R" V 3250 2725 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 2625 50  0001 C CNN
+F 3 "~" H 3350 2625 50  0001 C CNN
+	1    3350 2625
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R16
+U 1 1 5FD4BD84
+P 3350 2850
+F 0 "R16" V 3250 2650 50  0000 C CNN
+F 1 "0R" V 3250 2950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3280 2850 50  0001 C CNN
+F 3 "~" H 3350 2850 50  0001 C CNN
+	1    3350 2850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5550 3800 5150 3800
+Text Label 5200 3700 0    50   ~ 0
+SCL
+Text Label 5200 3800 0    50   ~ 0
+SDA
+Text Notes 4350 4400 0    50   ~ 0
+I2C signals SCL and SDA can\nbe routed to any GPIO pins\nof ESP32 (as long they are\nof bidirectional type)
+$Comp
+L Device:R R18
+U 1 1 5FD4B96C
+P 4900 3700
+F 0 "R18" V 4800 3500 50  0000 C CNN
+F 1 "0R" V 4800 3800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 4830 3700 50  0001 C CNN
+F 3 "~" H 4900 3700 50  0001 C CNN
+	1    4900 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R19
+U 1 1 5FD4C25F
+P 4900 3950
+F 0 "R19" V 4800 3750 50  0000 C CNN
+F 1 "0R" V 4800 4050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 4830 3950 50  0001 C CNN
+F 3 "~" H 4900 3950 50  0001 C CNN
+	1    4900 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5050 3700 5550 3700
+Wire Wire Line
+	5150 3800 5150 3950
+Wire Wire Line
+	5150 3950 5050 3950
+Wire Wire Line
+	9100 4000 8700 4000
+Wire Wire Line
+	9100 4800 8700 4800
+Text Label 8700 4000 0    50   ~ 0
+R_IO33
+Text Label 8700 4800 0    50   ~ 0
+R_IO34
+Wire Wire Line
+	4750 3700 4400 3700
+Wire Wire Line
+	4750 3950 4400 3950
+Text Label 4400 3700 0    50   ~ 0
+R_IO19
+Text Notes 4300 3950 1    50   ~ 0
+- I2C -
+Text Notes 4175 2875 1    50   ~ 0
+------- ePaper Interface ------
+Text Label 2400 2100 0    50   ~ 0
+EP_SDI
+Text Label 2400 2200 0    50   ~ 0
+EP_SCLK
+Text Label 2400 2300 0    50   ~ 0
+EP_CS
+Text Label 2400 2400 0    50   ~ 0
+EP_DC
+Text Label 2400 2500 0    50   ~ 0
+EP_RES
+Text Label 2400 2600 0    50   ~ 0
+EP_BUSY
+Text Notes 8550 4600 1    50   ~ 0
+- LED -
+Wire Wire Line
+	8700 2000 9100 2000
+Text Label 8700 2000 0    50   ~ 0
+R_EN
+Wire Wire Line
+	8700 2100 9100 2100
+Text Label 8700 2100 0    50   ~ 0
+R_IO0
+Text Notes 8525 2200 1    50   ~ 0
+-Boot Ctrl -
+$Comp
+L Device:R R4
+U 1 1 5FF10F3B
+P 3250 4900
+F 0 "R4" V 3150 4700 50  0000 C CNN
+F 1 "0R" V 3150 5000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3180 4900 50  0001 C CNN
+F 3 "~" H 3250 4900 50  0001 C CNN
+	1    3250 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R5
+U 1 1 5FF110BB
+P 3250 5100
+F 0 "R5" V 3150 4900 50  0000 C CNN
+F 1 "0R" V 3150 5200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 3180 5100 50  0001 C CNN
+F 3 "~" H 3250 5100 50  0001 C CNN
+	1    3250 5100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2350 4900 3100 4900
+Wire Wire Line
+	2350 5000 2800 5000
+Wire Wire Line
+	2800 5000 2800 5100
+Wire Wire Line
+	2800 5100 3100 5100
+Text Label 2400 4900 0    50   ~ 0
+CP_IO0
+Text Label 2400 5000 0    50   ~ 0
+CP_EN
+Wire Wire Line
+	3400 4900 3900 4900
+Wire Wire Line
+	3400 5100 3900 5100
+Text Label 3600 4900 0    50   ~ 0
+R_IO0
+Text Label 3600 5100 0    50   ~ 0
+R_EN
+$Sheet
+S 1200 1850 1150 3550
+U 5FC62BF0
+F0 "EPaper-Connectors" 50
+F1 "file5FC62BEF.sch" 50
+F2 "EP_DC" B R 2350 2400 50 
+F3 "EP_SDI" B R 2350 2100 50 
+F4 "EP_SCLK" B R 2350 2200 50 
+F5 "EP_CS" B R 2350 2300 50 
+F6 "EP_RES" B R 2350 2500 50 
+F7 "EP_BUSY" B R 2350 2600 50 
+F8 "CP_IO0" I R 2350 4900 50 
+F9 "CP_EN" I R 2350 5000 50 
+F10 "R_RXD0" O R 2350 4550 50 
+F11 "R_TXD0" I R 2350 4650 50 
+F12 "R_CTS" B R 2350 4450 50 
+F13 "R_RTS" B R 2350 4350 50 
+F14 "R_DTR" B R 2350 4250 50 
+F15 "R_DSR" B R 2350 4150 50 
+F16 "R_DCD" B R 2350 4050 50 
+F17 "R_RI" B R 2350 3950 50 
+F18 "R_IO22" B R 2350 3700 50 
+$EndSheet
+Text Notes 4150 5100 1    50   ~ 0
+UART Interface
+Wire Wire Line
+	2350 4550 3900 4550
+Wire Wire Line
+	2350 4650 3900 4650
+Wire Wire Line
+	2350 4350 2700 4350
+Wire Wire Line
+	2350 4450 2700 4450
+Wire Wire Line
+	2350 3950 2700 3950
+Wire Wire Line
+	2350 4050 2700 4050
+Wire Wire Line
+	2700 4150 2350 4150
+Wire Wire Line
+	2350 4250 2700 4250
+NoConn ~ 2700 3950
+Wire Wire Line
+	9100 2300 8700 2300
+Wire Wire Line
+	8700 2400 9100 2400
+Text Label 8700 2300 0    50   ~ 0
+R_RXD0
+Text Label 8700 2400 0    50   ~ 0
+R_TXD0
+NoConn ~ 2700 4050
+NoConn ~ 2700 4150
+NoConn ~ 2700 4250
+NoConn ~ 2700 4350
+NoConn ~ 2700 4450
+Text Label 3600 4550 0    50   ~ 0
+R_RXD0
+Text Label 3600 4650 0    50   ~ 0
+R_TXD0
+Text Notes 2850 4250 0    50   ~ 0
+ESP32 does not use HW\nhandshake on its UART0
+Text Notes 8350 2600 1    50   ~ 0
+-UART Rx/Tx -
+Wire Wire Line
+	3500 1450 3900 1450
+Wire Wire Line
+	8700 3400 9100 3400
+Wire Wire Line
+	8700 4900 9100 4900
+Wire Wire Line
+	10300 2600 10800 2600
+Text Label 10450 2600 0    50   ~ 0
+R_IO6
+Wire Wire Line
+	10300 2800 10800 2800
+Text Label 10450 2800 0    50   ~ 0
+R_IO8
+Text Label 10450 2900 0    50   ~ 0
+R_IO9
+$Comp
+L Device:C C36
+U 1 1 5FD7530C
+P 4150 5550
+F 0 "C36" V 4050 5300 50  0000 C CNN
+F 1 "0.1uF/50V(NC)" V 4050 5925 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4188 5400 50  0001 C CNN
+F 3 "~" H 4150 5550 50  0001 C CNN
+	1    4150 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C37
+U 1 1 5FD7635B
+P 4150 6650
+F 0 "C37" V 4050 6450 50  0000 C CNN
+F 1 "0.1uF/50V" V 4050 6950 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 4188 6500 50  0001 C CNN
+F 3 "~" H 4150 6650 50  0001 C CNN
+	1    4150 6650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4000 5550 3600 5550
+Wire Wire Line
+	3600 5550 3600 5700
+Connection ~ 3600 5700
+Wire Wire Line
+	4000 6650 3600 6650
+Connection ~ 3600 6650
+Wire Wire Line
+	3600 6650 3600 6800
+Connection ~ 3600 6800
+Wire Wire Line
+	4300 5550 4750 5550
+Wire Wire Line
+	4750 5550 4750 5800
+Wire Wire Line
+	4750 6650 4750 6900
+Connection ~ 4750 6900
+Wire Wire Line
+	4300 6650 4750 6650
+Text Label 4900 5800 0    50   ~ 0
+R_IO0
+Text Notes 4450 7500 0    50   ~ 0
+Reset
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 60622B00
+P 6650 7250
+F 0 "H4" V 6550 7100 50  0000 L CNN
+F 1 "M3-L5-3.5" V 6550 7400 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 6650 7250 50  0001 C CNN
+F 3 "~" H 6650 7250 50  0001 C CNN
+	1    6650 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 60622B06
+P 6450 7250
+F 0 "H3" V 6350 7100 50  0000 L CNN
+F 1 "M3-L5-3.5" V 6350 7400 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 6450 7250 50  0001 C CNN
+F 3 "~" H 6450 7250 50  0001 C CNN
+	1    6450 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 60622B0C
+P 6250 7250
+F 0 "H2" V 6150 7100 50  0000 L CNN
+F 1 "M3-L5-3.5" V 6150 7400 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 6250 7250 50  0001 C CNN
+F 3 "~" H 6250 7250 50  0001 C CNN
+	1    6250 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 60622B12
+P 6050 7250
+F 0 "H1" V 5950 7100 50  0000 L CNN
+F 1 "M3-L5-3.5" V 5950 7400 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 6050 7250 50  0001 C CNN
+F 3 "~" H 6050 7250 50  0001 C CNN
+	1    6050 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 7350 6250 7500
+Wire Wire Line
+	6450 7350 6450 7500
+Wire Wire Line
+	6650 7350 6650 7500
+Wire Wire Line
+	6050 7350 6050 7500
+$Comp
+L power:GND #PWR02
+U 1 1 60622B1C
+P 6050 7500
+F 0 "#PWR02" H 6050 7250 50  0001 C CNN
+F 1 "GND" H 6055 7327 50  0000 C CNN
+F 2 "" H 6050 7500 50  0001 C CNN
+F 3 "" H 6050 7500 50  0001 C CNN
+	1    6050 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 60622B22
+P 6250 7500
+F 0 "#PWR03" H 6250 7250 50  0001 C CNN
+F 1 "GND" H 6255 7327 50  0000 C CNN
+F 2 "" H 6250 7500 50  0001 C CNN
+F 3 "" H 6250 7500 50  0001 C CNN
+	1    6250 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 60622B28
+P 6450 7500
+F 0 "#PWR04" H 6450 7250 50  0001 C CNN
+F 1 "GND" H 6455 7327 50  0000 C CNN
+F 2 "" H 6450 7500 50  0001 C CNN
+F 3 "" H 6450 7500 50  0001 C CNN
+	1    6450 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 60622B2E
+P 6650 7500
+F 0 "#PWR05" H 6650 7250 50  0001 C CNN
+F 1 "GND" H 6655 7327 50  0000 C CNN
+F 2 "" H 6650 7500 50  0001 C CNN
+F 3 "" H 6650 7500 50  0001 C CNN
+	1    6650 7500
+	1    0    0    -1  
+$EndComp
+Text Notes 8350 4075 1    50   ~ 0
+----- ePaper Interface ----
+Wire Wire Line
+	8700 5000 9100 5000
+Wire Wire Line
+	2350 3700 3900 3700
+$Comp
+L LTST-C191KGKT:LTST-C191KGKT D2
+U 1 1 5FDF24F3
+P 1950 6850
+F 0 "D2" V 2167 6900 50  0000 C CNN
+F 1 "LTST-C191KRKT (Red)" V 2076 6900 50  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 1950 6850 50  0001 L BNN
+F 3 "https://www.mouser.de/datasheet/2/239/LTST-C191KRKT-1140668.pdf" H 1950 6850 50  0001 L BNN
+	1    1950 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L SKRTLAE010:SKRTLAE010 SW2
+U 1 1 5FE23BEF
+P 4150 6100
+F 0 "SW2" H 4353 6109 50  0000 L CNN
+F 1 "SKRTLAE010" H 4353 6018 50  0000 L CNN
+F 2 "SKRTLAE010:SW_Push_1P1T-MP_NO_Horizontal_Alps_SKRTLAE010" H 4150 6300 50  0001 C CNN
+F 3 "https://www.mouser.de/datasheet/2/15/SKRT-1370725.pdf" H 4150 6300 50  0001 C CNN
+	1    4150 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L SKRTLAE010:SKRTLAE010 SW3
+U 1 1 5FE31466
+P 4150 7200
+F 0 "SW3" H 4353 7209 50  0000 L CNN
+F 1 "SKRTLAE010" H 4353 7118 50  0000 L CNN
+F 2 "SKRTLAE010:SW_Push_1P1T-MP_NO_Horizontal_Alps_SKRTLAE010" H 4150 7400 50  0001 C CNN
+F 3 "https://www.mouser.de/datasheet/2/15/SKRT-1370725.pdf" H 4150 7400 50  0001 C CNN
+	1    4150 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 5700 4300 5900
+Wire Wire Line
+	3600 5700 4000 5700
+Wire Wire Line
+	4000 5900 4000 5700
+Connection ~ 4000 5700
+Wire Wire Line
+	4000 5700 4300 5700
+Wire Wire Line
+	4150 5900 4150 5800
+Wire Wire Line
+	4150 6900 4150 7000
+Wire Wire Line
+	4000 6800 4000 7000
+Wire Wire Line
+	3600 6800 4000 6800
+Wire Wire Line
+	4000 6800 4300 6800
+Wire Wire Line
+	4300 6800 4300 7000
+Connection ~ 4000 6800
+Text Notes 4450 6350 0    50   ~ 0
+Boot
+Wire Wire Line
+	4750 5800 5150 5800
+Wire Wire Line
+	4150 6900 4750 6900
+Text Label 4950 6900 0    50   ~ 0
+R_EN
+Wire Wire Line
+	4750 6900 5150 6900
+Wire Wire Line
+	4150 5800 4750 5800
+Connection ~ 4750 5800
+Wire Wire Line
+	3600 5700 3600 6650
+$Comp
+L power:GND #PWR01
+U 1 1 5FFB78AC
+P 3600 7500
+F 0 "#PWR01" H 3600 7250 50  0001 C CNN
+F 1 "GND" H 3605 7327 50  0000 C CNN
+F 2 "" H 3600 7500 50  0001 C CNN
+F 3 "" H 3600 7500 50  0001 C CNN
+	1    3600 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 6800 3600 7500
+Wire Wire Line
+	10300 3000 10800 3000
+Wire Wire Line
+	10300 3100 10800 3100
+Text Label 10450 3000 0    50   ~ 0
+R_IO10
+Text Label 10450 3100 0    50   ~ 0
+R_IO11
+Wire Wire Line
+	8700 5100 9100 5100
+Text Label 8700 5100 0    50   ~ 0
+R_IO39
+Text Notes 8550 5150 1    50   ~ 0
+Input only\n(RTC GPIOs)
+Text Notes 11075 3275 1    50   ~ 0
+IO6-11 used internally\n(SPI Memory)
+$Comp
+L Connector:TestPoint TP25
+U 1 1 5FFB12AE
+P 7300 4550
+F 0 "TP25" H 7150 4850 50  0000 L CNN
+F 1 "T_IO39" H 7150 4750 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 7500 4550 50  0001 C CNN
+F 3 "~" H 7500 4550 50  0001 C CNN
+	1    7300 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP26
+U 1 1 5FFB7FCD
+P 7500 4300
+F 0 "TP26" H 7350 4600 50  0000 L CNN
+F 1 "T_IO36" H 7350 4500 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 7700 4300 50  0001 C CNN
+F 3 "~" H 7700 4300 50  0001 C CNN
+	1    7500 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP27
+U 1 1 5FFB868E
+P 7700 4550
+F 0 "TP27" H 7550 4850 50  0000 L CNN
+F 1 "T_IO35" H 7550 4750 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 7900 4550 50  0001 C CNN
+F 3 "~" H 7900 4550 50  0001 C CNN
+	1    7700 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP28
+U 1 1 5FFB8BBC
+P 7900 4300
+F 0 "TP28" H 7750 4600 50  0000 L CNN
+F 1 "T_IO34" H 7750 4500 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 8100 4300 50  0001 C CNN
+F 3 "~" H 8100 4300 50  0001 C CNN
+	1    7900 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 4300 7900 4800
+Wire Wire Line
+	7900 4800 8300 4800
+Wire Wire Line
+	7700 4550 7700 4900
+Wire Wire Line
+	7700 4900 8300 4900
+Wire Wire Line
+	7500 4300 7500 5000
+Wire Wire Line
+	7500 5000 8300 5000
+Wire Wire Line
+	7300 4550 7300 5100
+Wire Wire Line
+	7300 5100 8300 5100
+Text Label 8025 4800 0    50   ~ 0
+R_IO34
+Text Label 8700 5000 0    50   ~ 0
+R_IO36
+Text Label 8025 4900 0    50   ~ 0
+R_IO35
+Text Label 8025 5000 0    50   ~ 0
+R_IO36
+Text Label 8025 5100 0    50   ~ 0
+R_IO39
+$Comp
+L Device:R R121
+U 1 1 5FF453D4
+P 7150 2600
+F 0 "R121" V 7050 2400 50  0000 C CNN
+F 1 "22R" V 7050 2700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 7080 2600 50  0001 C CNN
+F 3 "~" H 7150 2600 50  0001 C CNN
+	1    7150 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6700 2600 7000 2600
+Wire Wire Line
+	6700 2825 7000 2825
+Wire Wire Line
+	6700 3050 7000 3050
+Wire Wire Line
+	6700 3275 7000 3275
+Wire Wire Line
+	7300 2600 7650 2600
+Wire Wire Line
+	7300 2825 7650 2825
+Wire Wire Line
+	7300 3050 7650 3050
+Wire Wire Line
+	7300 3275 7650 3275
+NoConn ~ 7650 2600
+NoConn ~ 7650 2825
+NoConn ~ 7650 3050
+NoConn ~ 7650 3275
+$Comp
+L Device:R R122
+U 1 1 5FFB58E5
+P 7150 2825
+F 0 "R122" V 7050 2625 50  0000 C CNN
+F 1 "22R" V 7050 2925 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 7080 2825 50  0001 C CNN
+F 3 "~" H 7150 2825 50  0001 C CNN
+	1    7150 2825
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R123
+U 1 1 5FFB5ECA
+P 7150 3050
+F 0 "R123" V 7050 2850 50  0000 C CNN
+F 1 "22R" V 7050 3150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 7080 3050 50  0001 C CNN
+F 3 "~" H 7150 3050 50  0001 C CNN
+	1    7150 3050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R124
+U 1 1 5FFB6493
+P 7150 3275
+F 0 "R124" V 7050 3075 50  0000 C CNN
+F 1 "22R" V 7050 3375 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 7080 3275 50  0001 C CNN
+F 3 "~" H 7150 3275 50  0001 C CNN
+	1    7150 3275
+	0    1    1    0   
+$EndComp
+Text Notes 1300 1575 0    50   ~ 0
+5.3.21: Working config but GPIO9 has to be changed\nMOSI: GPIO 23\nClock: SPIO 18\nCS: GPIO21\nDC: GPIO 26\nReset: GPIO 32\nBusy: GPIO 9 (?? Int FLASH)\n-> changed to IO33
+Text Notes 4925 6075 0    50   ~ 0
+Cap on IO_0 may affect Booting
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J5
+U 1 1 60468E98
+P 8475 5800
+F 0 "J5" H 8525 6217 50  0000 C CNN
+F 1 "Conn_02x05_Odd_Even" H 8525 6126 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Horizontal" H 8475 5800 50  0001 C CNN
+F 3 "~" H 8475 5800 50  0001 C CNN
+	1    8475 5800
+	1    0    0    -1  
+$EndComp
+Text Notes 8300 6250 0    50   ~ 0
+Future Use,\nexternal buttons\n
+Wire Wire Line
+	8275 6000 8050 6000
+Wire Wire Line
+	8050 6000 8050 6200
+$Comp
+L power:GND #PWR067
+U 1 1 604EB9DA
+P 8050 6200
+F 0 "#PWR067" H 8050 5950 50  0001 C CNN
+F 1 "GND" H 8055 6027 50  0000 C CNN
+F 2 "" H 8050 6200 50  0001 C CNN
+F 3 "" H 8050 6200 50  0001 C CNN
+	1    8050 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L VDD33:VDD33 #PWR073
+U 1 1 604ECAB6
+P 9625 5900
+F 0 "#PWR073" H 9625 5750 50  0001 C CNN
+F 1 "VDD33" H 9640 6073 50  0000 C CNN
+F 2 "" H 9625 5900 50  0001 C CNN
+F 3 "" H 9625 5900 50  0001 C CNN
+	1    9625 5900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 604EF185
+P 9400 5900
+F 0 "R9" V 9300 5700 50  0000 C CNN
+F 1 "0R" V 9300 6000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" V 9330 5900 50  0001 C CNN
+F 3 "~" H 9400 5900 50  0001 C CNN
+	1    9400 5900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8775 5900 9025 5900
+Wire Wire Line
+	9625 5900 9550 5900
+Wire Wire Line
+	2900 1900 2900 2200
+Wire Wire Line
+	2350 2400 3200 2400
+Text Label 3650 1675 0    50   ~ 0
+R_IO27
+Wire Wire Line
+	7300 5100 7300 5900
+Wire Wire Line
+	7300 5900 8275 5900
+Connection ~ 7300 5100
+Wire Wire Line
+	7500 5000 7500 5800
+Wire Wire Line
+	7500 5800 8275 5800
+Connection ~ 7500 5000
+Wire Wire Line
+	7700 4900 7700 5700
+Wire Wire Line
+	7700 5700 8275 5700
+Connection ~ 7700 4900
+Wire Wire Line
+	7900 4800 7900 5600
+Wire Wire Line
+	7900 5600 8275 5600
+Connection ~ 7900 4800
+Text Label 8025 5600 0    50   ~ 0
+R_IO34
+Text Label 8025 5700 0    50   ~ 0
+R_IO35
+Text Label 8025 5800 0    50   ~ 0
+R_IO36
+Text Label 8025 5900 0    50   ~ 0
+R_IO39
+Wire Wire Line
+	9025 6000 9025 6200
+$Comp
+L power:GND #PWR071
+U 1 1 606B90A5
+P 9025 6200
+F 0 "#PWR071" H 9025 5950 50  0001 C CNN
+F 1 "GND" H 9030 6027 50  0000 C CNN
+F 2 "" H 9025 6200 50  0001 C CNN
+F 3 "" H 9025 6200 50  0001 C CNN
+	1    9025 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9025 6000 8775 6000
+Wire Wire Line
+	8775 5600 9025 5600
+Wire Wire Line
+	9025 5600 9025 5700
+Connection ~ 9025 5900
+Wire Wire Line
+	9025 5900 9250 5900
+Wire Wire Line
+	8775 5700 9025 5700
+Connection ~ 9025 5700
+Wire Wire Line
+	9025 5700 9025 5800
+Wire Wire Line
+	8775 5800 9025 5800
+Connection ~ 9025 5800
+Wire Wire Line
+	9025 5800 9025 5900
+Text Notes 8500 3550 1    50   ~ 0
+I2C
+Text Notes 8500 3050 1    50   ~ 0
+I2C
+Wire Wire Line
+	10300 2900 10800 2900
+Wire Wire Line
+	10300 2700 10800 2700
+Text Label 10450 2700 0    50   ~ 0
+R_IO7
+NoConn ~ 10800 2600
+NoConn ~ 10800 2700
+NoConn ~ 10800 2800
+NoConn ~ 10800 2900
+NoConn ~ 10800 3000
+NoConn ~ 10800 3125
+Text Label 3650 2850 0    50   ~ 0
+R_IO5
+Text Label 3625 3700 0    50   ~ 0
+R_IO22
+Text Notes 3000 3550 0    50   ~ 0
+Switch ePaper Power Supply
+Wire Wire Line
+	850  6150 850  6850
+$EndSCHEMATC

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SC20S-12.5PF20PPM
+D Crystals 32.768kHz 12.5pF +/-20PPM
+K
+F https://www.sii.co.jp/en/quartz/files/2013/03/SC-20S_Leaflet_e20151217.pdf
+$ENDCMP
+#
+#End Doc Library

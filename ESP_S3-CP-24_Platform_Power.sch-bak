@@ -1,0 +1,1148 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 4 6
+Title "Espressif ESP32_S3-CP-24 Developer Platform - Overview"
+Date "2022-03-04"
+Rev "R0.8"
+Comp "Matthias Ahrens & Stefan Tauschek"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R20
+U 1 1 616822B9
+P 10250 3725
+F 0 "R20" H 10320 3771 50  0000 L CNN
+F 1 "11,5k" H 10320 3680 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 10180 3725 50  0001 C CNN
+F 3 "~" H 10250 3725 50  0001 C CNN
+F 4 " C228269" H 10250 3725 50  0001 C CNN "LCSC"
+	1    10250 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C13
+U 1 1 616833D5
+P 12150 3800
+F 0 "C13" H 12268 3846 50  0000 L CNN
+F 1 "100uF, 6,3V" H 12268 3755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 12188 3650 50  0001 C CNN
+F 3 "~" H 12150 3800 50  0001 C CNN
+F 4 "C141660" H 12150 3800 50  0001 C CNN "LCSC"
+	1    12150 3800
+	1    0    0    -1  
+$EndComp
+Text Notes 725  2000 0    50   ~ 0
+OUTPUT VOLTAGE PROGRAMMING\nThe output voltage is set via the external resistor divider \ncomprised of resistors Ra and Rb as show in Figures 1. \nThe resistor divider values determine the output regulation\nvoltage according to: \nVOUT = 0.8V • (1+Ra/Rb)\nIn addition to setting the output voltage, the value of Ra is \ninstrumental in controlling the dynamics of the compensation network.\nWhen changing the value of this resistor, \ncare must be taken to understand the impact this will have \non the compensation network. \nIn addition, the Thevenin equivalent resistance of the resistor divider controls\nthe gain of the input current limit. To\nmaintain sufficient gain in this loop, it is recommended \nthat the Thevenin resistance be greater than 100kΩ.
+Text Notes 750  2650 0    118  ~ 0
+For 3V3 output use :\nRa = 845k\nRb = 261k
+$Comp
+L power:GND #PWR0130
+U 1 1 6169E331
+P 2650 9750
+F 0 "#PWR0130" H 2650 9500 50  0001 C CNN
+F 1 "GND" H 2655 9577 50  0000 C CNN
+F 2 "" H 2650 9750 50  0001 C CNN
+F 3 "" H 2650 9750 50  0001 C CNN
+	1    2650 9750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2275 8850 2650 8850
+Wire Wire Line
+	2650 8850 2650 9750
+$Comp
+L Device:D_Zener D?
+U 1 1 616A82D1
+P 3775 8650
+AR Path="/6166FD3F/616A82D1" Ref="D?"  Part="1" 
+AR Path="/6166FADD/616A82D1" Ref="D2"  Part="1" 
+F 0 "D2" H 3775 8433 50  0000 C CNN
+F 1 "BAT760-7" H 3775 8524 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323" H 3775 8650 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30498.pdf" H 3775 8650 50  0001 C CNN
+F 4 "C116158" H 3775 8650 50  0001 C CNN "LCSC"
+	1    3775 8650
+	-1   0    0    1   
+$EndComp
+$Comp
+L LTST-C191KGKT:LTST-C191KGKT D?
+U 1 1 616A8571
+P 3350 9400
+AR Path="/616A8571" Ref="D?"  Part="1" 
+AR Path="/5FC62BF0/616A8571" Ref="D?"  Part="1" 
+AR Path="/6166FD3F/616A8571" Ref="D?"  Part="1" 
+AR Path="/6166FADD/616A8571" Ref="D3"  Part="1" 
+F 0 "D3" H 3225 9600 50  0000 C CNN
+F 1 "LTST-C191KRKT (Red)" V 3476 9450 50  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 3350 9400 50  0001 L BNN
+F 3 "https://www.mouser.de/datasheet/2/239/LTST-C191KRKT-1140668.pdf" H 3350 9400 50  0001 L BNN
+F 4 "C125099" H 3350 9400 50  0001 C CNN "LCSC"
+	1    3350 9400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 9500 3350 9750
+$Comp
+L power:GND #PWR0131
+U 1 1 616A857C
+P 3350 9750
+F 0 "#PWR0131" H 3350 9500 50  0001 C CNN
+F 1 "GND" H 3355 9577 50  0000 C CNN
+F 2 "" H 3350 9750 50  0001 C CNN
+F 3 "" H 3350 9750 50  0001 C CNN
+	1    3350 9750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 616A8586
+P 3350 8925
+F 0 "R14" H 3525 8875 50  0000 C CNN
+F 1 "5k1" H 3525 8950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3280 8925 50  0001 C CNN
+F 3 "~" H 3350 8925 50  0001 C CNN
+F 4 "C204548" H 3350 8925 50  0001 C CNN "LCSC"
+	1    3350 8925
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3350 8650 3350 8775
+Wire Wire Line
+	3350 9075 3350 9200
+$Comp
+L Connector:TestPoint TP?
+U 1 1 616A8592
+P 3775 8050
+AR Path="/6166FD3F/616A8592" Ref="TP?"  Part="1" 
+AR Path="/6166FADD/616A8592" Ref="TP8"  Part="1" 
+F 0 "TP8" H 3725 8275 50  0000 L CNN
+F 1 "Ext Voltage 12V" H 3550 8400 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 3975 8050 50  0001 C CNN
+F 3 "~" H 3975 8050 50  0001 C CNN
+	1    3775 8050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 8650 4200 8500
+$Comp
+L Device:R R?
+U 1 1 616A85A7
+P 4200 8350
+AR Path="/6166FD3F/616A85A7" Ref="R?"  Part="1" 
+AR Path="/6166FADD/616A85A7" Ref="R13"  Part="1" 
+F 0 "R13" H 4000 8300 50  0000 L CNN
+F 1 "0R1" H 4000 8400 50  0000 L CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 4130 8350 50  0001 C CNN
+F 3 "~" H 4200 8350 50  0001 C CNN
+F 4 "C473589" H 4200 8350 50  0001 C CNN "LCSC"
+	1    4200 8350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4200 8000 4200 8100
+Wire Wire Line
+	3775 8050 3775 8100
+Wire Wire Line
+	3775 8100 4200 8100
+Connection ~ 4200 8100
+Wire Wire Line
+	4200 8100 4200 8200
+$Comp
+L Device:CP C6
+U 1 1 616AB208
+P 4200 9225
+F 0 "C6" H 4318 9271 50  0000 L CNN
+F 1 "47uF, 22V" H 4318 9180 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4238 9075 50  0001 C CNN
+F 3 "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf" H 4200 9225 50  0001 C CNN
+F 4 "C90142" H 4200 9225 50  0001 C CNN "LCSC"
+F 5 "810-C2012X5R1A476M" H 4200 9225 50  0001 C CNN "Mouser Part Number"
+	1    4200 9225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 8650 4200 9075
+$Comp
+L power:GND #PWR0132
+U 1 1 616B3F60
+P 4200 9750
+F 0 "#PWR0132" H 4200 9500 50  0001 C CNN
+F 1 "GND" H 4205 9577 50  0000 C CNN
+F 2 "" H 4200 9750 50  0001 C CNN
+F 3 "" H 4200 9750 50  0001 C CNN
+	1    4200 9750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 9375 4200 9750
+$Comp
+L power:+12V #PWR0133
+U 1 1 616D44EE
+P 4200 8000
+F 0 "#PWR0133" H 4200 7850 50  0001 C CNN
+F 1 "+12V" H 4215 8173 50  0000 C CNN
+F 2 "" H 4200 8000 50  0001 C CNN
+F 3 "" H 4200 8000 50  0001 C CNN
+	1    4200 8000
+	1    0    0    -1  
+$EndComp
+Text Notes 1300 8300 0    50   ~ 0
+External Power Supply, 2.5V ... 24V
+$Comp
+L power:+12V #PWR0134
+U 1 1 616FEB35
+P 8100 8425
+F 0 "#PWR0134" H 8100 8275 50  0001 C CNN
+F 1 "+12V" H 8115 8598 50  0000 C CNN
+F 2 "" H 8100 8425 50  0001 C CNN
+F 3 "" H 8100 8425 50  0001 C CNN
+	1    8100 8425
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VD #PWR0135
+U 1 1 61708A6A
+P 8650 8425
+F 0 "#PWR0135" H 8650 8275 50  0001 C CNN
+F 1 "+5VD" H 8665 8598 50  0000 C CNN
+F 2 "" H 8650 8425 50  0001 C CNN
+F 3 "" H 8650 8425 50  0001 C CNN
+	1    8650 8425
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C4
+U 1 1 6170AC2A
+P 2775 4350
+F 0 "C4" H 2350 4200 50  0000 L CNN
+F 1 "47uF, 22V" H 2350 4125 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2813 4200 50  0001 C CNN
+F 3 "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_commercial_general_en.pdf" H 2775 4350 50  0001 C CNN
+F 4 "C90142" H 2775 4350 50  0001 C CNN "LCSC"
+F 5 "810-C2012X5R1A476M" H 2775 4350 50  0001 C CNN "Mouser Part Number"
+	1    2775 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 6170BE75
+P 2225 4350
+F 0 "C3" H 2575 4175 50  0000 L CNN
+F 1 "0.1uF, 50V" H 2275 4250 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 2263 4200 50  0001 C CNN
+F 3 "~" H 2225 4350 50  0001 C CNN
+F 4 "C161260" H 2225 4350 50  0001 C CNN "LCSC"
+	1    2225 4350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2225 4500 2225 5075
+$Comp
+L power:GND #PWR0136
+U 1 1 6170D6E6
+P 2225 5075
+F 0 "#PWR0136" H 2225 4825 50  0001 C CNN
+F 1 "GND" H 2230 4902 50  0000 C CNN
+F 2 "" H 2225 5075 50  0001 C CNN
+F 3 "" H 2225 5075 50  0001 C CNN
+	1    2225 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2775 4500 2775 5075
+$Comp
+L power:GND #PWR0137
+U 1 1 617131E7
+P 2775 5075
+F 0 "#PWR0137" H 2775 4825 50  0001 C CNN
+F 1 "GND" H 2780 4902 50  0000 C CNN
+F 2 "" H 2775 5075 50  0001 C CNN
+F 3 "" H 2775 5075 50  0001 C CNN
+	1    2775 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2775 4200 2775 3800
+Wire Wire Line
+	2775 3800 2225 3800
+Wire Wire Line
+	2225 3800 2225 4200
+Connection ~ 2775 3800
+Wire Wire Line
+	4775 3800 2775 3800
+Text Notes 7600 8000 0    50   ~ 0
+USB Power (VBUS) and external 12V are\ndecoupled by Schottky and 0R1 so they can be\nconnected here.\nHigher Voltage on either rail will feed the system
+Wire Wire Line
+	4775 3900 4075 3900
+Wire Wire Line
+	4075 3900 4075 2650
+Wire Wire Line
+	6550 2650 8350 2650
+Wire Wire Line
+	8350 2650 8350 4000
+Wire Wire Line
+	8350 4000 7575 4000
+$Comp
+L Device:C C5
+U 1 1 61727710
+P 4400 4350
+F 0 "C5" V 4550 4425 50  0000 L CNN
+F 1 "0.1uF, 50V" V 4550 3950 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4438 4200 50  0001 C CNN
+F 3 "~" H 4400 4350 50  0001 C CNN
+F 4 "C161260" H 4400 4350 50  0001 C CNN "LCSC"
+	1    4400 4350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4075 2650 5750 2650
+Wire Wire Line
+	4775 4000 4400 4000
+Wire Wire Line
+	4400 4000 4400 4200
+Wire Wire Line
+	4075 3900 4075 4650
+Wire Wire Line
+	4075 4650 4400 4650
+Wire Wire Line
+	4400 4650 4400 4500
+Connection ~ 4075 3900
+$Comp
+L Device:C C8
+U 1 1 6173F469
+P 7925 4375
+F 0 "C8" V 7775 4500 50  0000 L CNN
+F 1 "0.1uF, 50V" V 7775 4050 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7963 4225 50  0001 C CNN
+F 3 "~" H 7925 4375 50  0001 C CNN
+F 4 "C161260" H 7925 4375 50  0001 C CNN "LCSC"
+	1    7925 4375
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7575 4100 7925 4100
+Wire Wire Line
+	7925 4100 7925 4225
+Wire Wire Line
+	7925 4525 7925 4650
+Wire Wire Line
+	7925 4650 8350 4650
+Wire Wire Line
+	8350 4650 8350 4000
+Connection ~ 8350 4000
+Wire Wire Line
+	12150 2650 12150 3650
+$Comp
+L Device:C C14
+U 1 1 61748F17
+P 12950 3800
+F 0 "C14" H 13225 3550 50  0000 L CNN
+F 1 "1uF, 16V" H 13050 3650 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 12988 3650 50  0001 C CNN
+F 3 "~" H 12950 3800 50  0001 C CNN
+F 4 "C16834" H 12950 3800 50  0001 C CNN "LCSC"
+	1    12950 3800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12950 3650 12950 2650
+Wire Wire Line
+	12950 2650 12150 2650
+Connection ~ 12150 2650
+$Comp
+L Device:R R23
+U 1 1 61751CD2
+P 11375 4400
+F 0 "R23" H 11445 4446 50  0000 L CNN
+F 1 "261k" H 11445 4355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11305 4400 50  0001 C CNN
+F 3 "~" H 11375 4400 50  0001 C CNN
+F 4 "C352236" H 11375 4400 50  0001 C CNN "LCSC"
+	1    11375 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R22
+U 1 1 61752320
+P 11375 3725
+F 0 "R22" H 11445 3771 50  0000 L CNN
+F 1 "845k" H 11445 3680 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11305 3725 50  0001 C CNN
+F 3 "~" H 11375 3725 50  0001 C CNN
+F 4 "C416871" H 11375 3725 50  0001 C CNN "LCSC"
+	1    11375 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R21
+U 1 1 61752DB3
+P 10975 3050
+F 0 "R21" H 11045 3096 50  0000 L CNN
+F 1 "49R9" H 11045 3005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 10905 3050 50  0001 C CNN
+F 3 "~" H 10975 3050 50  0001 C CNN
+F 4 "C479104" H 10975 3050 50  0001 C CNN "LCSC"
+	1    10975 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 617530A9
+P 8450 2000
+F 0 "R17" V 8200 1875 50  0000 L CNN
+F 1 "41,2k" V 8275 1875 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 8380 2000 50  0001 C CNN
+F 3 "~" H 8450 2000 50  0001 C CNN
+F 4 "C204486" V 8450 2000 50  0001 C CNN "LCSC"
+	1    8450 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2275 8650 3350 8650
+Text Notes 3650 9625 1    50   ~ 0
+External Power
+$Comp
+L power:GND #PWR0138
+U 1 1 616E44BE
+P 8600 5075
+F 0 "#PWR0138" H 8600 4825 50  0001 C CNN
+F 1 "GND" H 8605 4902 50  0000 C CNN
+F 2 "" H 8600 5075 50  0001 C CNN
+F 3 "" H 8600 5075 50  0001 C CNN
+	1    8600 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7575 3500 8600 3500
+Wire Wire Line
+	7575 3400 8600 3400
+Wire Wire Line
+	8600 3400 8600 3500
+Connection ~ 8600 3500
+Wire Wire Line
+	10975 2900 10975 2650
+Connection ~ 10975 2650
+Wire Wire Line
+	10975 2650 12150 2650
+Wire Wire Line
+	11375 3375 11375 3575
+Wire Wire Line
+	11375 3875 11375 4050
+$Comp
+L power:GND #PWR0139
+U 1 1 61705CCF
+P 11375 5075
+F 0 "#PWR0139" H 11375 4825 50  0001 C CNN
+F 1 "GND" H 11380 4902 50  0000 C CNN
+F 2 "" H 11375 5075 50  0001 C CNN
+F 3 "" H 11375 5075 50  0001 C CNN
+	1    11375 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11375 4550 11375 5075
+Wire Wire Line
+	4775 3500 3875 3500
+Wire Wire Line
+	9650 4050 10250 4050
+Connection ~ 11375 4050
+Wire Wire Line
+	11375 4050 11375 4250
+Text Label 4450 3500 0    50   ~ 0
+LT_FB
+$Comp
+L Device:C C12
+U 1 1 61721C3B
+P 10600 3375
+F 0 "C12" V 10875 3325 50  0000 L CNN
+F 1 "47p" V 10775 3325 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 10638 3225 50  0001 C CNN
+F 3 "~" H 10600 3375 50  0001 C CNN
+F 4 "C113821" V 10600 3375 50  0001 C CNN "LCSC"
+	1    10600 3375
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10450 3375 10250 3375
+Wire Wire Line
+	10250 3375 10250 3575
+Wire Wire Line
+	10750 3375 10975 3375
+Wire Wire Line
+	10975 3200 10975 3375
+Connection ~ 10975 3375
+Wire Wire Line
+	10975 3375 11375 3375
+Wire Wire Line
+	10250 3875 10250 4050
+Connection ~ 10250 4050
+Wire Wire Line
+	10250 4050 11375 4050
+$Comp
+L Device:C C11
+U 1 1 61736A16
+P 9125 2000
+F 0 "C11" V 9400 1975 50  0000 L CNN
+F 1 "1500p" V 9300 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 9163 1850 50  0001 C CNN
+F 3 "~" H 9125 2000 50  0001 C CNN
+F 4 "C114765" V 9125 2000 50  0001 C CNN "LCSC"
+	1    9125 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C9
+U 1 1 61736FC8
+P 8725 1475
+F 0 "C9" V 9000 1425 50  0000 L CNN
+F 1 "22p" V 8900 1375 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 8763 1325 50  0001 C CNN
+F 3 "~" H 8725 1475 50  0001 C CNN
+F 4 "C105623" V 8725 1475 50  0001 C CNN "LCSC"
+	1    8725 1475
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9650 4050 9650 2000
+Wire Wire Line
+	9650 1475 8875 1475
+Wire Wire Line
+	9275 2000 9650 2000
+Connection ~ 9650 2000
+Wire Wire Line
+	9650 2000 9650 1475
+Wire Wire Line
+	8600 2000 8975 2000
+Wire Wire Line
+	8575 1475 7900 1475
+Wire Wire Line
+	7900 1475 7900 2000
+Wire Wire Line
+	7900 2000 8300 2000
+Wire Wire Line
+	7900 2000 4325 2000
+Wire Wire Line
+	4325 2000 4325 3400
+Wire Wire Line
+	4325 3400 4775 3400
+Connection ~ 7900 2000
+Text Label 4450 3400 0    50   ~ 0
+LT_COMP
+$Comp
+L power:GND #PWR0140
+U 1 1 6175E8A0
+P 12150 5075
+F 0 "#PWR0140" H 12150 4825 50  0001 C CNN
+F 1 "GND" H 12155 4902 50  0000 C CNN
+F 2 "" H 12150 5075 50  0001 C CNN
+F 3 "" H 12150 5075 50  0001 C CNN
+	1    12150 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12150 3950 12150 5075
+$Comp
+L power:GND #PWR0141
+U 1 1 61768E35
+P 12950 5075
+F 0 "#PWR0141" H 12950 4825 50  0001 C CNN
+F 1 "GND" H 12955 4902 50  0000 C CNN
+F 2 "" H 12950 5075 50  0001 C CNN
+F 3 "" H 12950 5075 50  0001 C CNN
+	1    12950 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12950 3950 12950 5075
+Wire Wire Line
+	7575 3600 8825 3600
+Text Label 7650 3600 0    50   ~ 0
+LT_PWM
+$Comp
+L power:GND #PWR0142
+U 1 1 6178E47A
+P 3675 5075
+F 0 "#PWR0142" H 3675 4825 50  0001 C CNN
+F 1 "GND" H 3680 4902 50  0000 C CNN
+F 2 "" H 3675 5075 50  0001 C CNN
+F 3 "" H 3675 5075 50  0001 C CNN
+	1    3675 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4775 3600 3675 3600
+Wire Wire Line
+	3675 3600 3675 5075
+Wire Wire Line
+	4775 3700 3450 3700
+Wire Wire Line
+	3450 3700 3450 6200
+Text Label 4450 3700 0    50   ~ 0
+LT_RUN
+Text Label 7650 3700 0    50   ~ 0
+LT_VCC
+Text Label 6225 6200 0    50   ~ 0
+LT_RUN
+$Comp
+L Device:R R15
+U 1 1 617AB24A
+P 6600 5825
+F 0 "R15" H 6670 5871 50  0000 L CNN
+F 1 "1M" H 6670 5780 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6530 5825 50  0001 C CNN
+F 3 "~" H 6600 5825 50  0001 C CNN
+F 4 "C230655" H 6600 5825 50  0001 C CNN "LCSC"
+	1    6600 5825
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R16
+U 1 1 617AC3B7
+P 6600 6625
+F 0 "R16" H 6670 6671 50  0000 L CNN
+F 1 "1M (DNP)" H 6670 6580 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6530 6625 50  0001 C CNN
+F 3 "~" H 6600 6625 50  0001 C CNN
+F 4 "C230655" H 6600 6625 50  0001 C CNN "LCSC"
+	1    6600 6625
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C7
+U 1 1 617ACBDE
+P 7250 6625
+F 0 "C7" H 7025 6600 50  0000 L CNN
+F 1 "1uF, 16V" H 6775 6675 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7288 6475 50  0001 C CNN
+F 3 "~" H 7250 6625 50  0001 C CNN
+F 4 "C16834" H 7250 6625 50  0001 C CNN "LCSC"
+	1    7250 6625
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0143
+U 1 1 617AD8DB
+P 6600 7025
+F 0 "#PWR0143" H 6600 6775 50  0001 C CNN
+F 1 "GND" H 6605 6852 50  0000 C CNN
+F 2 "" H 6600 7025 50  0001 C CNN
+F 3 "" H 6600 7025 50  0001 C CNN
+	1    6600 7025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 6775 6600 7025
+$Comp
+L power:GND #PWR0144
+U 1 1 617B6DCE
+P 7250 7025
+F 0 "#PWR0144" H 7250 6775 50  0001 C CNN
+F 1 "GND" H 7255 6852 50  0000 C CNN
+F 2 "" H 7250 7025 50  0001 C CNN
+F 3 "" H 7250 7025 50  0001 C CNN
+	1    7250 7025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 6775 7250 7025
+$Comp
+L Device:R R12
+U 1 1 617C8A2D
+P 8650 8775
+F 0 "R12" H 8425 8725 50  0000 L CNN
+F 1 "0R1" H 8425 8825 50  0000 L CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 8580 8775 50  0001 C CNN
+F 3 "~" H 8650 8775 50  0001 C CNN
+F 4 "C473589" H 8650 8775 50  0001 C CNN "LCSC"
+	1    8650 8775
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R11
+U 1 1 617C950D
+P 8100 8775
+F 0 "R11" H 7875 8725 50  0000 L CNN
+F 1 "0R1" H 7875 8825 50  0000 L CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 8030 8775 50  0001 C CNN
+F 3 "~" H 8100 8775 50  0001 C CNN
+F 4 "C473589" H 8100 8775 50  0001 C CNN "LCSC"
+	1    8100 8775
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8650 8625 8650 8425
+Wire Wire Line
+	8100 8425 8100 8625
+Wire Wire Line
+	8100 8925 8100 9250
+Text Label 4450 3800 0    50   ~ 0
+LT_VIN
+Wire Wire Line
+	6600 5675 6600 5500
+Text Label 6225 5500 0    50   ~ 0
+LT_VIN
+Wire Wire Line
+	6600 5975 6600 6200
+Wire Wire Line
+	7250 6475 7250 6200
+Wire Wire Line
+	7250 6200 6600 6200
+Connection ~ 6600 6200
+Wire Wire Line
+	6600 6200 6600 6475
+Wire Wire Line
+	3450 6200 6600 6200
+Wire Wire Line
+	12950 2650 13650 2650
+Connection ~ 12950 2650
+$Comp
+L Connector:TestPoint TP9
+U 1 1 61805482
+P 13900 1725
+F 0 "TP9" H 13825 2050 50  0000 L CNN
+F 1 "3V3" H 13825 1950 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 14100 1725 50  0001 C CNN
+F 3 "~" H 14100 1725 50  0001 C CNN
+	1    13900 1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R25
+U 1 1 61805978
+P 14325 2150
+F 0 "R25" H 14075 2100 50  0000 L CNN
+F 1 "0R1" H 14075 2200 50  0000 L CNN
+F 2 "Resistor_SMD:R_1210_3225Metric" V 14255 2150 50  0001 C CNN
+F 3 "~" H 14325 2150 50  0001 C CNN
+F 4 "C473589" H 14325 2150 50  0001 C CNN "LCSC"
+	1    14325 2150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	14325 1675 14325 1775
+Wire Wire Line
+	13900 1725 13900 1775
+Wire Wire Line
+	13900 1775 14325 1775
+Connection ~ 14325 1775
+Wire Wire Line
+	14325 1775 14325 2000
+Wire Wire Line
+	14325 2300 14325 2650
+$Comp
+L power:VDD #PWR0145
+U 1 1 61824664
+P 14325 1675
+F 0 "#PWR0145" H 14325 1525 50  0001 C CNN
+F 1 "VDD" H 14340 1848 50  0000 C CNN
+F 2 "" H 14325 1675 50  0001 C CNN
+F 3 "" H 14325 1675 50  0001 C CNN
+	1    14325 1675
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C10
+U 1 1 6182BB61
+P 9050 4350
+F 0 "C10" H 8775 4300 50  0000 L CNN
+F 1 "1uF, 16V" H 8575 4375 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 9088 4200 50  0001 C CNN
+F 3 "~" H 9050 4350 50  0001 C CNN
+F 4 "C16834" H 9050 4350 50  0001 C CNN "LCSC"
+	1    9050 4350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9050 4500 9050 5075
+$Comp
+L power:GND #PWR0146
+U 1 1 6182C080
+P 9050 5075
+F 0 "#PWR0146" H 9050 4825 50  0001 C CNN
+F 1 "GND" H 9055 4902 50  0000 C CNN
+F 2 "" H 9050 5075 50  0001 C CNN
+F 3 "" H 9050 5075 50  0001 C CNN
+	1    9050 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7575 3700 9050 3700
+Wire Wire Line
+	9050 3700 9050 4200
+$Comp
+L Device:R R19
+U 1 1 61838A1B
+P 9050 3375
+F 0 "R19" H 9120 3421 50  0000 L CNN
+F 1 "0R" H 9120 3330 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 8980 3375 50  0001 C CNN
+F 3 "~" H 9050 3375 50  0001 C CNN
+F 4 "C100045" H 9050 3375 50  0001 C CNN "LCSC"
+	1    9050 3375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 3700 9050 3525
+Connection ~ 9050 3700
+Wire Wire Line
+	8825 3600 8825 3075
+Wire Wire Line
+	8825 3075 9050 3075
+Wire Wire Line
+	9050 3075 9050 3225
+$Comp
+L Device:R R18
+U 1 1 618562A3
+P 9050 2750
+F 0 "R18" H 9120 2796 50  0000 L CNN
+F 1 "0R (DNP)" H 9120 2705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 8980 2750 50  0001 C CNN
+F 3 "~" H 9050 2750 50  0001 C CNN
+F 4 "C100045" H 9050 2750 50  0001 C CNN "LCSC"
+	1    9050 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0147
+U 1 1 61856A3E
+P 9050 2450
+F 0 "#PWR0147" H 9050 2200 50  0001 C CNN
+F 1 "GND" H 9055 2277 50  0000 C CNN
+F 2 "" H 9050 2450 50  0001 C CNN
+F 3 "" H 9050 2450 50  0001 C CNN
+	1    9050 2450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9950 3900 9950 2650
+Wire Wire Line
+	9950 2650 10975 2650
+Wire Wire Line
+	7575 3900 9950 3900
+Wire Wire Line
+	9050 2450 9050 2600
+Wire Wire Line
+	9050 2900 9050 3075
+Connection ~ 9050 3075
+Text Notes 1075 3725 0    50   ~ 0
+LT_VIN may be between 2V5 and 15V
+Text Notes 9950 2575 0    50   ~ 0
+Output 3V3 @ 1.5A
+$Comp
+L Connector_Generic:Conn_02x02_Top_Bottom J5
+U 1 1 618694BF
+P 7325 9250
+F 0 "J5" H 7375 9467 50  0000 C CNN
+F 1 "Conn_02x02_Top_Bottom" H 7375 9376 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" H 7325 9250 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2003191006_XFCN-PZ254V-12-4P_C492419.pdf" H 7325 9250 50  0001 C CNN
+F 4 "C492419" H 7325 9250 50  0001 C CNN "LCSC"
+	1    7325 9250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7125 9350 6675 9350
+Wire Wire Line
+	7125 9250 6675 9250
+Connection ~ 6675 9250
+Wire Wire Line
+	6675 9250 6675 9350
+Wire Wire Line
+	7625 9250 8100 9250
+Text Notes 6425 10225 0    50   ~ 0
+Connector to loop in external battery controller\n\nIn normal mode connect J5.1 with J5.3\nand J5.2 with J5.4 (2 Jumpers)\n\nWhen using an external battery controller such as Sparkfun's babysitter,\nopen the Jumpers, connect J5.4 to the input of the controller and J5.2\nto the output of the controller (=battery + terminal)
+$Comp
+L Connector_Generic:Conn_02x02_Top_Bottom J6
+U 1 1 6189ABF9
+P 14800 4100
+F 0 "J6" H 14850 4317 50  0000 C CNN
+F 1 "Conn_02x02_Top_Bottom (DNP)" H 14850 4226 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" H 14800 4100 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2003191006_XFCN-PZ254V-12-4P_C492419.pdf" H 14800 4100 50  0001 C CNN
+F 4 "C492419" H 14800 4100 50  0001 C CNN "LCSC"
+	1    14800 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14600 4200 14275 4200
+Wire Wire Line
+	14275 3300 14275 4100
+Wire Wire Line
+	14600 4100 14275 4100
+Connection ~ 14275 4100
+Wire Wire Line
+	14275 4100 14275 4200
+$Comp
+L power:GND #PWR0150
+U 1 1 6189B176
+P 15525 5025
+F 0 "#PWR0150" H 15525 4775 50  0001 C CNN
+F 1 "GND" H 15530 4852 50  0000 C CNN
+F 2 "" H 15525 5025 50  0001 C CNN
+F 3 "" H 15525 5025 50  0001 C CNN
+	1    15525 5025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15100 4100 15525 4100
+Wire Wire Line
+	15525 4100 15525 4200
+Wire Wire Line
+	15100 4200 15525 4200
+Connection ~ 15525 4200
+Wire Wire Line
+	15525 4200 15525 5025
+Text Notes 14325 4550 0    50   ~ 0
+Connector to use 3V3\n!! Do not feed in 3V3 here !!
+$Comp
+L power:VDD #PWR0151
+U 1 1 618ACB85
+P 14275 3300
+F 0 "#PWR0151" H 14275 3150 50  0001 C CNN
+F 1 "VDD" H 14290 3473 50  0000 C CNN
+F 2 "" H 14275 3300 50  0001 C CNN
+F 3 "" H 14275 3300 50  0001 C CNN
+	1    14275 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L LTST-C191KGKT:LTST-C191KGKT D?
+U 1 1 618CE4C7
+P 13650 4425
+AR Path="/618CE4C7" Ref="D?"  Part="1" 
+AR Path="/5FC62BF0/618CE4C7" Ref="D?"  Part="1" 
+AR Path="/6166FD3F/618CE4C7" Ref="D?"  Part="1" 
+AR Path="/6166FADD/618CE4C7" Ref="D4"  Part="1" 
+F 0 "D4" H 13525 4625 50  0000 C CNN
+F 1 "LTST-C191KRKT (Red)" V 13776 4475 50  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 13650 4425 50  0001 L BNN
+F 3 "https://www.mouser.de/datasheet/2/239/LTST-C191KRKT-1140668.pdf" H 13650 4425 50  0001 L BNN
+F 4 "C125099" H 13650 4425 50  0001 C CNN "LCSC"
+	1    13650 4425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	13650 4525 13650 5050
+$Comp
+L power:GND #PWR0152
+U 1 1 618CE96C
+P 13650 5050
+F 0 "#PWR0152" H 13650 4800 50  0001 C CNN
+F 1 "GND" H 13655 4877 50  0000 C CNN
+F 2 "" H 13650 5050 50  0001 C CNN
+F 3 "" H 13650 5050 50  0001 C CNN
+	1    13650 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R24
+U 1 1 618CE976
+P 13650 3350
+F 0 "R24" H 13825 3325 50  0000 C CNN
+F 1 "1k5" H 13825 3400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 13580 3350 50  0001 C CNN
+F 3 "~" H 13650 3350 50  0001 C CNN
+F 4 "C163951" H 13650 3350 50  0001 C CNN "LCSC"
+	1    13650 3350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	13650 2650 13650 3200
+Wire Wire Line
+	13650 3500 13650 4225
+Text Notes 13950 4925 1    50   ~ 0
+3V3 System Voltage (VDD)
+Connection ~ 13650 2650
+Wire Wire Line
+	13650 2650 14325 2650
+Text Notes 11100 3775 0    79   ~ 0
+Ra
+Text Notes 11100 4450 0    79   ~ 0
+Rb
+Wire Wire Line
+	14325 1775 14750 1775
+Wire Wire Line
+	14750 1775 14750 1675
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 61721B00
+P 14750 1675
+F 0 "#FLG0103" H 14750 1750 50  0001 C CNN
+F 1 "PWR_FLAG" H 14750 1848 50  0000 C CNN
+F 2 "" H 14750 1675 50  0001 C CNN
+F 3 "~" H 14750 1675 50  0001 C CNN
+	1    14750 1675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 8100 4625 8100
+Wire Wire Line
+	4625 8100 4625 8000
+$Comp
+L power:PWR_FLAG #FLG0104
+U 1 1 6172C6F0
+P 4625 8000
+F 0 "#FLG0104" H 4625 8075 50  0001 C CNN
+F 1 "PWR_FLAG" H 4625 8173 50  0000 C CNN
+F 2 "" H 4625 8000 50  0001 C CNN
+F 3 "~" H 4625 8000 50  0001 C CNN
+	1    4625 8000
+	1    0    0    -1  
+$EndComp
+Text Notes 5800 2825 0    50   ~ 0
+Footprint 7 x 7 mm
+Wire Wire Line
+	9275 3700 9050 3700
+$Comp
+L power:PWR_FLAG #FLG0105
+U 1 1 61765AA9
+P 9275 3700
+F 0 "#FLG0105" H 9275 3775 50  0001 C CNN
+F 1 "PWR_FLAG" V 9175 3575 50  0000 L CNN
+F 2 "" H 9275 3700 50  0001 C CNN
+F 3 "~" H 9275 3700 50  0001 C CNN
+	1    9275 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8600 3500 8600 3800
+Wire Wire Line
+	7575 3800 8600 3800
+Connection ~ 8600 3800
+Wire Wire Line
+	8600 3800 8600 5075
+$Comp
+L SLF7032T-100M1R4-2PF:SLF7032T-100M1R4-2PF L1
+U 1 1 61733C9B
+P 5750 2650
+F 0 "L1" H 6150 2875 50  0000 C CNN
+F 1 "10uH - SLF7032T-100M1R4-2PF" H 6150 2784 50  0000 C CNN
+F 2 "Inductor_SMD:L_TDK_SLF7032" H 6400 2700 50  0001 L CNN
+F 3 "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_power_slf7032_en.pdf" H 6400 2600 50  0001 L CNN
+F 4 "Inductors for Power Circuits, Wound Ferrite" H 6400 2500 50  0001 L CNN "Description"
+F 5 "" H 6400 2400 50  0001 L CNN "Height"
+F 6 "810-SLF732100M1R42PF" H 6400 2300 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/TDK/SLF7032T-100M1R4-2PF?qs=T0U6VJonakmClN7cPqW0nw%3D%3D" H 6400 2200 50  0001 L CNN "Mouser Price/Stock"
+F 8 "TDK" H 6400 2100 50  0001 L CNN "Manufacturer_Name"
+F 9 "SLF7032T-100M1R4-2PF" H 6400 2000 50  0001 L CNN "Manufacturer_Part_Number"
+F 10 "C76852" H 5750 2650 50  0001 C CNN "LCSC"
+F 11 "810-SLF732100M1R42PF" H 5750 2650 50  0001 C CNN "Mouser"
+	1    5750 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2275 8750 2650 8750
+Wire Wire Line
+	2650 8750 2650 8850
+Connection ~ 2650 8850
+$Comp
+L Connector:Barrel_Jack_Switch J4
+U 1 1 6176A8AC
+P 1975 8750
+F 0 "J4" H 1975 9075 50  0000 C CNN
+F 1 "PJ-002AH-SMT-TR (Barrel Jack)" H 2032 8976 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_CLIFF_FC681465S_SMT_Horizontal" H 2025 8710 50  0001 C CNN
+F 3 "https://www.mouser.de/datasheet/2/670/pj_002ah_smt_tr-1778459.pdf" H 2025 8710 50  0001 C CNN
+F 4 "" H 1975 8750 50  0001 C CNN "LCSC"
+F 5 "490-PJ-002AH-SMT-TR" H 1975 8750 50  0001 C CNN "Mouser Part Number"
+F 6 "490-PJ-002AH-SMT-TR" H 1975 8750 50  0001 C CNN "Mouser"
+	1    1975 8750
+	1    0    0    -1  
+$EndComp
+Text Notes 1275 9225 0    50   ~ 0
+!! Check if Power on inner Pin !!\n!! is ok for application !!
+Wire Wire Line
+	2225 3800 1000 3800
+Wire Wire Line
+	1000 3800 1000 6775
+Wire Wire Line
+	1000 6775 5825 6775
+Wire Wire Line
+	5825 6775 5825 9250
+Wire Wire Line
+	5825 9250 6675 9250
+Connection ~ 2225 3800
+Text Label 6275 9250 0    50   ~ 0
+LT_VIN
+Wire Wire Line
+	8650 8925 8650 9350
+Wire Wire Line
+	7625 9350 8650 9350
+Text Label 7750 9250 0    50   ~ 0
+J5_12V
+Text Label 7750 9350 0    50   ~ 0
+J5_5V
+Wire Wire Line
+	5825 5500 5825 6775
+Wire Wire Line
+	5825 5500 6600 5500
+Connection ~ 5825 6775
+Text Notes 13025 10350 0    200  ~ 40
+WhirlingBits
+Wire Wire Line
+	7575 4200 7725 4200
+Wire Wire Line
+	7725 4200 7725 5075
+$Comp
+L power:GND #PWR0113
+U 1 1 61EBE223
+P 7725 5075
+F 0 "#PWR0113" H 7725 4825 50  0001 C CNN
+F 1 "GND" H 7730 4902 50  0000 C CNN
+F 2 "" H 7725 5075 50  0001 C CNN
+F 3 "" H 7725 5075 50  0001 C CNN
+	1    7725 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4775 4100 4625 4100
+Wire Wire Line
+	4625 4100 4625 5075
+$Comp
+L power:GND #PWR0120
+U 1 1 61EC6106
+P 4625 5075
+F 0 "#PWR0120" H 4625 4825 50  0001 C CNN
+F 1 "GND" H 4630 4902 50  0000 C CNN
+F 2 "" H 4625 5075 50  0001 C CNN
+F 3 "" H 4625 5075 50  0001 C CNN
+	1    4625 5075
+	1    0    0    -1  
+$EndComp
+$Comp
+L LTC3111EMSEPBF:LTC3111EMSEPBF U1
+U 1 1 61EA95FE
+P 4775 3400
+F 0 "U1" H 6175 3765 50  0000 C CNN
+F 1 "LTC3111EMSEPBF" H 6175 3674 50  0000 C CNN
+F 2 "Package_SO:MSOP-16-1EP_3x4.039mm_P0.5mm_EP1.651x2.845mm_ThermalVias" H 4775 3400 50  0001 L BNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/3111fa.pdf" H 4775 3400 50  0001 L BNN
+F 4 "Linear Technology" H 4775 3400 50  0001 L BNN "VENDOR"
+F 5 "ltc3111emse#pbf" H 4775 3400 50  0001 L BNN "MANUFACTURER_PART_NUMBER"
+F 6 "C684080" H 4775 3400 50  0001 C CNN "LCSC"
+F 7 "584-LTC3111EMSETRPBF" H 4775 3400 50  0001 C CNN "Mouser"
+	1    4775 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 1475 9650 925 
+Wire Wire Line
+	9650 925  3875 925 
+Wire Wire Line
+	3875 925  3875 3500
+Connection ~ 9650 1475
+Connection ~ 4200 8650
+Wire Wire Line
+	3925 8650 4200 8650
+Connection ~ 3350 8650
+Wire Wire Line
+	3350 8650 3625 8650
+Text Notes 750  3050 0    50   ~ 0
+Rb was reduced from 270k to 261k after prototype board showed\n3,18V instead of 3.3V.\nCalculating the above formula this gives a voltage of\n3.39V but should adjust output voltage in real circuitry to about 3.3V
+$EndSCHEMATC

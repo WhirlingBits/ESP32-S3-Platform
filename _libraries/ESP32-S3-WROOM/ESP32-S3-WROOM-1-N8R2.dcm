@@ -1,0 +1,11 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ESP32-S3-WROOM
+D WiFi Modules - 802.11 (Engineering Samples Only) SMD Module, ESP32-S3R2, 2 MB PSRAM, 8 MB SPI Flash, PCB Antenna ,,
+$ENDCMP
+#
+$CMP ESP32-S3-WROOM-1-N8R2
+D WiFi Modules - 802.11 (Engineering Samples Only) SMD Module, ESP32-S3R2, 2 MB PSRAM, 8 MB SPI Flash, PCB Antenna ,,
+$ENDCMP
+#
+#End Doc Library

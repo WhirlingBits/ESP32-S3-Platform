@@ -1,0 +1,631 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 3 6
+Title "Espressif ESP32_S3-CP-24 Developer Platform - Overview"
+Date "2022-03-04"
+Rev "R0.8"
+Comp "Matthias Ahrens & Stefan Tauschek"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	10925 4625 9800 4625
+Text Label 9900 4625 0    50   ~ 0
+CP_RXD
+Wire Wire Line
+	9800 4725 10925 4725
+Text Label 9900 4725 0    50   ~ 0
+CP_TXD
+Text Label 3350 8150 0    50   ~ 0
+USB-D-#1
+Text Label 3350 8000 0    50   ~ 0
+USB-D+#1
+$Comp
+L Device:CP C?
+U 1 1 61EF14D0
+P 5100 5275
+AR Path="/6166FD3F/61EF14D0" Ref="C?"  Part="1" 
+AR Path="/61EB032A/61EF14D0" Ref="C19"  Part="1" 
+F 0 "C19" H 5300 5325 50  0000 C CNN
+F 1 "4.7uF, 25V" H 5450 5225 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 5138 5125 50  0001 C CNN
+F 3 "https://www.mouser.de/datasheet/2/212/KEM_C1002_X7R_SMD-" H 5100 5275 50  0001 C CNN
+F 4 "C98192" H 5100 5275 50  0001 C CNN "LCSC"
+	1    5100 5275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 5425 5100 5725
+$Comp
+L Device:C C?
+U 1 1 61EF14D7
+P 4700 5275
+AR Path="/6166FD3F/61EF14D7" Ref="C?"  Part="1" 
+AR Path="/61EB032A/61EF14D7" Ref="C18"  Part="1" 
+F 0 "C18" H 4200 5325 50  0000 L CNN
+F 1 "0.1uF, 50V" H 4200 5225 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 4815 5184 50  0001 L CNN
+F 3 "~" H 4700 5275 50  0001 C CNN
+F 4 "C161260" H 4700 5275 50  0001 C CNN "LCSC"
+	1    4700 5275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 5425 4700 5725
+Wire Wire Line
+	4700 5125 4700 4800
+Wire Wire Line
+	5100 5125 5100 4800
+Wire Wire Line
+	5100 4800 4700 4800
+Text HLabel 13425 4625 2    50   Input ~ 0
+R_TXD0
+Text HLabel 13425 4725 2    50   Output ~ 0
+R_RXD0
+Text HLabel 13425 4525 2    50   BiDi ~ 0
+R_RTS
+Text HLabel 13425 4425 2    50   BiDi ~ 0
+R_CTS
+$Comp
+L Device:R R?
+U 1 1 61EF14E9
+P 7900 4725
+AR Path="/6166FD3F/61EF14E9" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF14E9" Ref="R36"  Part="1" 
+F 0 "R36" V 7693 4725 50  0000 C CNN
+F 1 "10k (DNP)" V 7784 4725 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7830 4725 50  0001 C CNN
+F 3 "~" H 7900 4725 50  0001 C CNN
+	1    7900 4725
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7450 4725 7750 4725
+$Comp
+L Device:R R?
+U 1 1 61EF14FC
+P 7400 3575
+AR Path="/6166FD3F/61EF14FC" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF14FC" Ref="R38"  Part="1" 
+F 0 "R38" V 7300 3325 50  0000 C CNN
+F 1 "1k" V 7300 3775 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 7330 3575 50  0001 C CNN
+F 3 "~" H 7400 3575 50  0001 C CNN
+	1    7400 3575
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VBUS #PWR?
+U 1 1 61EF1503
+P 6325 2800
+AR Path="/6166FD3F/61EF1503" Ref="#PWR?"  Part="1" 
+AR Path="/61EB032A/61EF1503" Ref="#PWR081"  Part="1" 
+F 0 "#PWR081" H 6325 2650 50  0001 C CNN
+F 1 "VBUS" H 6175 2950 50  0000 C CNN
+F 2 "" H 6325 2800 50  0001 C CNN
+F 3 "" H 6325 2800 50  0001 C CNN
+	1    6325 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61EF1509
+P 6325 4325
+AR Path="/6166FD3F/61EF1509" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF1509" Ref="R93"  Part="1" 
+F 0 "R93" H 6575 4225 50  0000 C CNN
+F 1 "22k" H 6550 4325 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6255 4325 50  0001 C CNN
+F 3 "~" H 6325 4325 50  0001 C CNN
+F 4 "C104113" H 6325 4325 50  0001 C CNN "LCSC"
+	1    6325 4325
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61EF150F
+P 6325 5125
+AR Path="/6166FD3F/61EF150F" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF150F" Ref="R33"  Part="1" 
+F 0 "R33" H 6575 5075 50  0000 C CNN
+F 1 "43k" H 6550 5175 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 6255 5125 50  0001 C CNN
+F 3 "~" H 6325 5125 50  0001 C CNN
+F 4 "C104355" H 6325 5125 50  0001 C CNN "LCSC"
+	1    6325 5125
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6325 5275 6325 5725
+Wire Wire Line
+	6325 4175 6325 2800
+Wire Wire Line
+	11225 4625 13425 4625
+Wire Wire Line
+	11225 4725 13425 4725
+Text Label 12875 4625 0    50   ~ 0
+R_TXD0
+Text Label 12875 4725 0    50   ~ 0
+R_RXD0
+Wire Wire Line
+	9800 4925 10925 4925
+Wire Wire Line
+	9800 4825 10925 4825
+Text Label 9900 4925 0    50   ~ 0
+CP_DTR
+Text Label 9900 4825 0    50   ~ 0
+CP_DSR
+Text Notes 8150 4825 0    50   ~ 0
+Active
+Wire Wire Line
+	9800 4325 10925 4325
+Text Label 9900 4325 0    50   ~ 0
+CP_RI
+Text Label 8200 4325 0    50   ~ 0
+CP_RST
+Text Label 9900 5025 0    50   ~ 0
+CP_DCD
+Wire Wire Line
+	9800 5025 10925 5025
+Wire Wire Line
+	10925 4525 9800 4525
+Wire Wire Line
+	9800 4425 10925 4425
+Wire Wire Line
+	11225 4425 13425 4425
+Wire Wire Line
+	11225 4525 13425 4525
+Text Label 9900 4425 0    50   ~ 0
+CP_CTS
+Text Label 9900 4525 0    50   ~ 0
+CP_RTS
+Text Label 12875 4425 0    50   ~ 0
+R_CTS
+Text Label 12875 4525 0    50   ~ 0
+R_RTS
+Text HLabel 13425 4325 2    50   BiDi ~ 0
+R_RI
+$Comp
+L Device:R R?
+U 1 1 61EF155A
+P 11075 4325
+AR Path="/6166FD3F/61EF155A" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF155A" Ref="R37"  Part="1" 
+F 0 "R37" V 11025 4075 50  0000 C CNN
+F 1 "0R" V 11025 4525 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4325 50  0001 C CNN
+F 3 "~" H 11075 4325 50  0001 C CNN
+	1    11075 4325
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11225 4325 13425 4325
+Text Label 12875 4325 0    50   ~ 0
+R_RI
+Text HLabel 13425 4825 2    50   BiDi ~ 0
+R_DSR
+$Comp
+L Device:R R?
+U 1 1 61EF1563
+P 11075 4825
+AR Path="/6166FD3F/61EF1563" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF1563" Ref="R41"  Part="1" 
+F 0 "R41" V 11025 4575 50  0000 C CNN
+F 1 "0R" V 11025 5025 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4825 50  0001 C CNN
+F 3 "~" H 11075 4825 50  0001 C CNN
+	1    11075 4825
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11225 4825 13425 4825
+Text Label 12875 4825 0    50   ~ 0
+R_DSR
+Text HLabel 13425 4925 2    50   BiDi ~ 0
+R_DTR
+$Comp
+L Device:R R?
+U 1 1 61EF156C
+P 11075 4925
+AR Path="/6166FD3F/61EF156C" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF156C" Ref="R40"  Part="1" 
+F 0 "R40" V 11025 4675 50  0000 C CNN
+F 1 "0R" V 11025 5125 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4925 50  0001 C CNN
+F 3 "~" H 11075 4925 50  0001 C CNN
+	1    11075 4925
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11225 4925 13425 4925
+Text Label 12875 4925 0    50   ~ 0
+R_DTR
+Text HLabel 13425 5025 2    50   BiDi ~ 0
+R_DCD
+$Comp
+L Device:R R?
+U 1 1 61EF1575
+P 11075 5025
+AR Path="/6166FD3F/61EF1575" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EF1575" Ref="R39"  Part="1" 
+F 0 "R39" V 11025 4775 50  0000 C CNN
+F 1 "0R" V 11025 5225 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 5025 50  0001 C CNN
+F 3 "~" H 11075 5025 50  0001 C CNN
+	1    11075 5025
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11225 5025 13425 5025
+Text Label 12875 5025 0    50   ~ 0
+R_DCD
+$Comp
+L power:GND #PWR?
+U 1 1 61EF1586
+P 5100 5725
+AR Path="/6166FD3F/61EF1586" Ref="#PWR?"  Part="1" 
+AR Path="/61EB032A/61EF1586" Ref="#PWR086"  Part="1" 
+F 0 "#PWR086" H 5100 5475 50  0001 C CNN
+F 1 "GND" H 5105 5552 50  0000 C CNN
+F 2 "" H 5100 5725 50  0001 C CNN
+F 3 "" H 5100 5725 50  0001 C CNN
+	1    5100 5725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61EF158C
+P 9300 6325
+AR Path="/6166FD3F/61EF158C" Ref="#PWR?"  Part="1" 
+AR Path="/61EB032A/61EF158C" Ref="#PWR0103"  Part="1" 
+F 0 "#PWR0103" H 9300 6075 50  0001 C CNN
+F 1 "GND" V 9305 6197 50  0000 R CNN
+F 2 "" H 9300 6325 50  0001 C CNN
+F 3 "" H 9300 6325 50  0001 C CNN
+	1    9300 6325
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61EF1592
+P 6325 5725
+AR Path="/6166FD3F/61EF1592" Ref="#PWR?"  Part="1" 
+AR Path="/61EB032A/61EF1592" Ref="#PWR082"  Part="1" 
+F 0 "#PWR082" H 6325 5475 50  0001 C CNN
+F 1 "GND" H 6330 5552 50  0000 C CNN
+F 2 "" H 6325 5725 50  0001 C CNN
+F 3 "" H 6325 5725 50  0001 C CNN
+	1    6325 5725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61EF1598
+P 7450 5725
+AR Path="/6166FD3F/61EF1598" Ref="#PWR?"  Part="1" 
+AR Path="/61EB032A/61EF1598" Ref="#PWR084"  Part="1" 
+F 0 "#PWR084" H 7450 5475 50  0001 C CNN
+F 1 "GND" H 7525 5550 50  0000 R CNN
+F 2 "" H 7450 5725 50  0001 C CNN
+F 3 "" H 7450 5725 50  0001 C CNN
+	1    7450 5725
+	1    0    0    -1  
+$EndComp
+Text Notes 3025 7800 0    50   ~ 0
+From USB Connector
+Text Label 8200 5225 0    50   ~ 0
+CP_VBUS
+Text Notes 10475 5300 0    50   ~ 0
+Crossing RxD/TxD happens here!
+Wire Wire Line
+	11425 7125 11425 7025
+Wire Wire Line
+	11425 8175 11425 8275
+$Comp
+L Device:R R?
+U 1 1 61EFC2AC
+P 10875 7325
+AR Path="/6166FD3F/61EFC2AC" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EFC2AC" Ref="R34"  Part="1" 
+F 0 "R34" V 10775 7225 50  0000 C CNN
+F 1 "10k" V 10775 7475 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 10805 7325 50  0001 C CNN
+F 3 "~" H 10875 7325 50  0001 C CNN
+F 4 "C169253" V 10875 7325 50  0001 C CNN "LCSC"
+	1    10875 7325
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61EFC2B3
+P 10875 7975
+AR Path="/6166FD3F/61EFC2B3" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61EFC2B3" Ref="R35"  Part="1" 
+F 0 "R35" V 10775 7875 50  0000 C CNN
+F 1 "10k" V 10775 8125 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 10805 7975 50  0001 C CNN
+F 3 "~" H 10875 7975 50  0001 C CNN
+F 4 "C169253" V 10875 7975 50  0001 C CNN "LCSC"
+	1    10875 7975
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11025 7325 11125 7325
+Wire Wire Line
+	11125 7975 11025 7975
+Wire Wire Line
+	10725 7325 10575 7325
+Wire Wire Line
+	10725 7975 10525 7975
+Wire Wire Line
+	11425 7525 11425 7575
+Wire Wire Line
+	11425 7575 10525 7575
+Wire Wire Line
+	10525 7575 10525 7975
+Connection ~ 10525 7975
+Wire Wire Line
+	10525 7975 10050 7975
+Wire Wire Line
+	11425 7675 10575 7675
+Wire Wire Line
+	10575 7675 10575 7325
+Wire Wire Line
+	11425 7675 11425 7775
+Connection ~ 10575 7325
+Wire Wire Line
+	10575 7325 10050 7325
+Text Label 10050 7325 0    50   ~ 0
+CP_DTR
+Text Label 10050 7975 0    50   ~ 0
+CP_RTS
+Text Label 12575 7025 0    50   ~ 0
+CP_EN
+Text Notes 12025 7825 0    50   ~ 0
+    Auto Program\nDTR | RTS  ->  EN | IO0\n1       1          1     1\n0       0          1     1\n1       0          0     1\n0       1          1     0
+Text Label 12575 8275 0    50   ~ 0
+CP_IO0
+Wire Wire Line
+	11425 8275 12950 8275
+Text HLabel 12925 7025 2    50   Output ~ 0
+CP_EN
+Text HLabel 12950 8275 2    50   Output ~ 0
+CP_IO0
+$Comp
+L Device:Q_NPN_BEC Q?
+U 1 1 61EFC2D0
+P 11325 7325
+AR Path="/6166FD3F/61EFC2D0" Ref="Q?"  Part="1" 
+AR Path="/61EB032A/61EFC2D0" Ref="Q1"  Part="1" 
+F 0 "Q1" H 11515 7371 50  0000 L CNN
+F 1 "SS8050-G" H 11515 7280 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 11525 7425 50  0001 C CNN
+F 3 "https://www.mouser.de/datasheet/2/80/SS8050-G_RevA181526-1481562.pdf" H 11325 7325 50  0001 C CNN
+F 4 "C164885" H 11325 7325 50  0001 C CNN "LCSC"
+F 5 "" H 11325 7325 50  0001 C CNN "Digikey"
+F 6 "" H 11325 7325 50  0001 C CNN "Mouser"
+	1    11325 7325
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NPN_BEC Q?
+U 1 1 61EFC2D7
+P 11325 7975
+AR Path="/6166FD3F/61EFC2D7" Ref="Q?"  Part="1" 
+AR Path="/61EB032A/61EFC2D7" Ref="Q2"  Part="1" 
+F 0 "Q2" H 11515 7929 50  0000 L CNN
+F 1 "SS8050-G" H 11515 8020 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 11525 8075 50  0001 C CNN
+F 3 "https://www.mouser.de/datasheet/2/80/SS8050-G_RevA181526-1481562.pdf" H 11325 7975 50  0001 C CNN
+F 4 "C164885" H 11325 7975 50  0001 C CNN "LCSC"
+F 5 "" H 11325 7975 50  0001 C CNN "Digikey"
+F 6 "" H 11325 7975 50  0001 C CNN "Mouser"
+	1    11325 7975
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	11425 7025 12925 7025
+Text Notes 10825 6975 0    50   ~ 0
+Performs Reset after FLASHing
+$Comp
+L Device:R R?
+U 1 1 61B8A720
+P 11075 4725
+AR Path="/6166FD3F/61B8A720" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61B8A720" Ref="R91"  Part="1" 
+F 0 "R91" V 11025 4475 50  0000 C CNN
+F 1 "0R" V 11025 4925 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4725 50  0001 C CNN
+F 3 "~" H 11075 4725 50  0001 C CNN
+	1    11075 4725
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61B8A942
+P 11075 4525
+AR Path="/6166FD3F/61B8A942" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61B8A942" Ref="R43"  Part="1" 
+F 0 "R43" V 11025 4275 50  0000 C CNN
+F 1 "0R" V 11025 4725 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4525 50  0001 C CNN
+F 3 "~" H 11075 4525 50  0001 C CNN
+	1    11075 4525
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61B8A94C
+P 11075 4425
+AR Path="/6166FD3F/61B8A94C" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61B8A94C" Ref="R42"  Part="1" 
+F 0 "R42" V 11025 4175 50  0000 C CNN
+F 1 "0R" V 11025 4625 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4425 50  0001 C CNN
+F 3 "~" H 11075 4425 50  0001 C CNN
+	1    11075 4425
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61B8D4D0
+P 11075 4625
+AR Path="/6166FD3F/61B8D4D0" Ref="R?"  Part="1" 
+AR Path="/61EB032A/61B8D4D0" Ref="R92"  Part="1" 
+F 0 "R92" V 11025 4375 50  0000 C CNN
+F 1 "0R" V 11025 4825 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 11005 4625 50  0001 C CNN
+F 3 "~" H 11075 4625 50  0001 C CNN
+	1    11075 4625
+	0    1    1    0   
+$EndComp
+Text HLabel 3250 8150 0    50   BiDi ~ 0
+USB-D-#1
+Text HLabel 3250 8000 0    50   BiDi ~ 0
+USB-D+#1
+Wire Wire Line
+	7400 3425 7400 2800
+$Comp
+L power:VDD #PWR0126
+U 1 1 61C5BBF0
+P 7400 2800
+F 0 "#PWR0126" H 7400 2650 50  0001 C CNN
+F 1 "VDD" H 7415 2973 50  0000 C CNN
+F 2 "" H 7400 2800 50  0001 C CNN
+F 3 "" H 7400 2800 50  0001 C CNN
+	1    7400 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0127
+U 1 1 61C5C29F
+P 5100 2825
+F 0 "#PWR0127" H 5100 2675 50  0001 C CNN
+F 1 "VDD" H 5115 2998 50  0000 C CNN
+F 2 "" H 5100 2825 50  0001 C CNN
+F 3 "" H 5100 2825 50  0001 C CNN
+	1    5100 2825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 4800 5100 2825
+$Comp
+L power:GND #PWR?
+U 1 1 61C5E118
+P 4700 5725
+AR Path="/6166FD3F/61C5E118" Ref="#PWR?"  Part="1" 
+AR Path="/61EB032A/61C5E118" Ref="#PWR085"  Part="1" 
+F 0 "#PWR085" H 4700 5475 50  0001 C CNN
+F 1 "GND" H 4705 5552 50  0000 C CNN
+F 2 "" H 4700 5725 50  0001 C CNN
+F 3 "" H 4700 5725 50  0001 C CNN
+	1    4700 5725
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0128
+U 1 1 61C627D3
+P 9200 2750
+F 0 "#PWR0128" H 9200 2600 50  0001 C CNN
+F 1 "VDD" H 9215 2923 50  0000 C CNN
+F 2 "" H 9200 2750 50  0001 C CNN
+F 3 "" H 9200 2750 50  0001 C CNN
+	1    9200 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 6325 9300 6100
+Wire Wire Line
+	8050 4725 8600 4725
+$Comp
+L Interface_USB:CP2102N-A01-GQFN24 U2
+U 1 1 61C5108C
+P 9200 4925
+F 0 "U2" H 9375 5975 50  0000 C CNN
+F 1 "CP2102N-A02-GQFN24" H 9775 5875 50  0000 C CNN
+F 2 "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm" H 9160 5915 50  0001 C CNN
+F 3 "https://www.silabs.com/documents/public/data-sheets/cp2102n-datasheet.pdf" H 9250 3875 50  0001 C CNN
+F 4 "C80225" H 9200 4925 50  0001 C CNN "LCSC"
+	1    9200 4925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6325 4475 6325 4725
+Wire Wire Line
+	8600 5225 6750 5225
+Wire Wire Line
+	6750 5225 6750 4725
+Wire Wire Line
+	6750 4725 6325 4725
+Connection ~ 6325 4725
+Wire Wire Line
+	6325 4725 6325 4975
+Wire Wire Line
+	7400 3725 7400 4325
+Wire Wire Line
+	7400 4325 8600 4325
+Connection ~ 5100 4800
+Wire Wire Line
+	9200 2750 9200 3725
+NoConn ~ 9800 5225
+NoConn ~ 9800 5325
+NoConn ~ 9800 5425
+NoConn ~ 9800 5525
+Wire Wire Line
+	9200 5825 9200 6100
+Wire Wire Line
+	9200 6100 9300 6100
+Connection ~ 9300 6100
+Wire Wire Line
+	9300 6100 9300 5825
+Wire Wire Line
+	8600 4925 7075 4925
+Wire Wire Line
+	7075 4925 7075 2800
+$Comp
+L power:VDD #PWR0129
+U 1 1 61CCDE67
+P 7075 2800
+F 0 "#PWR0129" H 7075 2650 50  0001 C CNN
+F 1 "VDD" H 7090 2973 50  0000 C CNN
+F 2 "" H 7075 2800 50  0001 C CNN
+F 3 "" H 7075 2800 50  0001 C CNN
+	1    7075 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 4725 7450 5725
+Wire Wire Line
+	7775 8000 7775 5325
+Wire Wire Line
+	7775 5325 8600 5325
+Wire Wire Line
+	3250 8000 7775 8000
+Wire Wire Line
+	8600 5425 7900 5425
+Wire Wire Line
+	7900 5425 7900 8150
+Wire Wire Line
+	3250 8150 7900 8150
+Text Label 8200 5325 0    50   ~ 0
+USB-D+#1
+Text Label 8200 5425 0    50   ~ 0
+USB-D-#1
+Wire Wire Line
+	9100 4025 9100 3725
+Wire Wire Line
+	9100 3725 9200 3725
+Connection ~ 9200 3725
+Wire Wire Line
+	9200 3725 9200 4025
+Text Notes 7675 3925 0    50   ~ 0
+Pin 10, 16 = NC (leave floating!)
+NoConn ~ 8600 4625
+Text Notes 13150 10350 0    200  ~ 40
+WhirlingBits
+$EndSCHEMATC
